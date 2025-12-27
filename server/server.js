@@ -28,7 +28,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/test", testRoutes);
 app.use("/api/vehicles", vehicleRoutes);
 app.use("/api/bookings", bookingRoutes);
-app.options("*", cors());
 
 app.get("/", (req, res) => {
   res.send("EZ RENTALS API is running");
