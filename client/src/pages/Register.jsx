@@ -14,7 +14,10 @@ function Register() {
       await api.post("/auth/register", { name, email, password });
       navigate("/login");
     } catch (err) {
-      alert(err.response?.data?.message || "Registration failed");
+      console.log("FULL ERROR:", err);
+  console.log("RESPONSE:", err.response);
+  console.log("DATA:", err.response?.data);
+  alert("Check console for error");
     }
   };
 

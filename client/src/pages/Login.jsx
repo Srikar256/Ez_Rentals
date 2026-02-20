@@ -16,7 +16,10 @@ function Login() {
     login(res.data.token);
     navigate("/vehicles");
   } catch (err) {
-    alert(err.response?.data?.message || "Login failed");
+    console.log("FULL ERROR:", err);
+  console.log("RESPONSE:", err.response);
+  console.log("DATA:", err.response?.data);
+  alert("Check console for error");
   }
 };
 
