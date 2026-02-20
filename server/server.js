@@ -16,6 +16,7 @@ const app = express();
 app.use(
   cors({
     origin: [
+      "http://localhost:5173",
       "https://chic-chebakia-321085.netlify.app",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
