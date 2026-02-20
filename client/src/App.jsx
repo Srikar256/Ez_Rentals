@@ -5,41 +5,56 @@ import Vehicles from "./pages/Vehicles";
 import Book from "./pages/Book";
 import MyBookings from "./pages/MyBookings";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<h1>EZ RENTALS</h1>} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
+    <>
+      <Navbar />
 
-      <Route
-        path="/vehicles"
-        element={
-          <ProtectedRoute>
-            <Vehicles />
-          </ProtectedRoute>
-        }
-      />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="min-h-screen bg-black flex items-center justify-center">
+              <h1 className="text-5xl font-bold text-white">
+                EZ RENTALS
+              </h1>
+            </div>
+          }
+        />
 
-      <Route
-        path="/book/:id"
-        element={
-          <ProtectedRoute>
-            <Book />
-          </ProtectedRoute>
-        }
-      />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
 
-      <Route
-        path="/my-bookings"
-        element={
-          <ProtectedRoute>
-            <MyBookings />
-          </ProtectedRoute>
-        }
-      />
-    </Routes>
+        <Route
+          path="/vehicles"
+          element={
+            <ProtectedRoute>
+              <Vehicles />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/book/:id"
+          element={
+            <ProtectedRoute>
+              <Book />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-bookings"
+          element={
+            <ProtectedRoute>
+              <MyBookings />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
   );
 }
 
